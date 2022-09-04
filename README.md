@@ -9,7 +9,7 @@ A Discord bot for posting [Canvas LMS](https://community.canvaslms.com/t5/Canvas
 You'll need a few things before you can use the bot.
 1. A [Discord developer account](https://discord.com/developers).
 2. Somewhere to host the bot. I highly recommend [Hetzner](https://hetzner.cloud/?ref=tqgDVez81Fag). *(affiliate link)*
-3. [Node JS](https://nodejs.org/en/)
+3. [Node JS](https://nodejs.org/en/) (>= 16.9.0)
 4. Be on a Canvas course of some sort.
 
 ## Installing
