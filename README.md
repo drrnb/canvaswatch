@@ -49,11 +49,11 @@ Once it's running invite it to your Discord server by going back to the Discord 
 Select the following checkboxes: "bot", "application.commands", "Send Messages", "Embed Links" and then open the URL and invite the bot to your server.
 
 ## Setting the announcement & assignment Discord Channels
-From within Discord you can use the following commands to setup the bot:
-`/announcements-channel <channel>` to set the text channel to post announcements to.
-`/assignments-channel <channel>` to set the text channel to post assignments to.
-`/announcements-fetch` to get the latest announcements.
-`/assignments-fetch` to get the latest assignments.
+From within Discord you can use the following commands to setup the bot:   
+`/announcements-channel <channel>` to set the text channel to post announcements to.  
+`/assignments-channel <channel>` to set the text channel to post assignments to.  
+`/announcements-fetch` to get the latest announcements.  
+`/assignments-fetch` to get the latest assignments.  
 
 Once setup the bot will check for new assignments and announcements every 5 minutes. You can change this from near the top of `index.js` if you wish.
 
