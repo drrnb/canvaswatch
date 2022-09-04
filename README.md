@@ -3,7 +3,7 @@
 ## What?
 A Discord bot for posting [Canvas LMS](https://community.canvaslms.com/t5/Canvas/ct-p/canvas) course announcements and assignments into text channels.
 
-![CanvasWatch Discord Screenshot](https://raw.githubusercontent.com/drrnb/canvaswatch/main/sample_image.jpg)
+![CanvasWatch Discord Screenshot](https://i.imgur.com/bYJUDvA.jpeg)
 
 ## Requirements
 You'll need a few things before you can use the bot.
