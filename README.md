@@ -52,10 +52,16 @@ Select the following checkboxes: "bot", "application.commands", "Send Messages",
 From within Discord you can use the following commands to setup the bot:   
 `/announcements-channel <channel>` to set the text channel to post announcements to.  
 `/assignments-channel <channel>` to set the text channel to post assignments to.  
-`/announcements-fetch` to get the latest announcements.  
-`/assignments-fetch` to get the latest assignments.  
+
+For the smoothest ride I recommend running the above commands and then restarting the bot. It should just work unattended from then on.
 
 Once setup the bot will check for new assignments and announcements every 5 minutes. You can change this from near the top of `index.js` if you wish.
+
+You can tell it to fetch assignments and announcements like so:  
+`/announcements-fetch` to get the latest announcements.  
+`/assignments-fetch` to get the latest assignments. 
+
+If an assignment or announcement has already been posted, it won't post it again.
 
 ## Bugs & Issues
 There is bound to be some issues and broken things somewhere along the line, feel free to submit pull requests and issues and if I get around to it I'll take a look. I know for one that the error handling isn't perfect. Make sure you have the right bot permissions in Discord. ;)
