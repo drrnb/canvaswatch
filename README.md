@@ -13,7 +13,7 @@ You'll need a few things before you can use the bot.
 4. Be on a Canvas course of some sort.
 
 ## Installing
-1. Clone this repo or [download the zip file]() and extract it to where you intend to run it from.
+1. Clone this repo or [download the zip file](https://github.com/drrnb/canvaswatch/archive/refs/heads/main.zip) and extract it to where you intend to run it from.
 2. Run `npm install` to install the required node packages.
 
 ## Creating the Discord Bot
