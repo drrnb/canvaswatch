@@ -60,6 +60,10 @@ Once setup the bot will check for new assignments and announcements every 5 minu
 ## Bugs & Issues
 There is bound to be some issues and broken things somewhere along the line, feel free to submit pull requests and issues and if I get around to it I'll take a look. I know for one that the error handling isn't perfect. Make sure you have the right bot permissions in Discord. ;)
 
+### Known Issues
+- When first creating the bot you may have some error related to channels and such, just be sure everything is setup correctly and restart the bot and it shoudl be fine from then on.
+- When fetching all the canvas data initially, it will post to Discord in reverse order. New posts are of course unaffected by this.
+
 ## License
 ```
 Copyright (c) 2022 Darren B <https://drrn.dev>
