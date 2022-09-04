@@ -14,5 +14,5 @@
   "description": "A discord bot that links to Canvas and listens for announcements and assignments.",
   "main": "index.js",
   "author": "drrn",
-  "license": "ISC"
+  "license": "MIT"
 }
