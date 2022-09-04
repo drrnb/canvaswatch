@@ -1,7 +1,7 @@
 # CanvasWatch
 
 ## What?
-A Discord bot for posting [Canvas LMS](https://community.canvaslms.com/t5/Canvas/ct-p/canvas) course announcements and assignments into text channels.
+A Discord bot for automatically posting [Canvas LMS](https://community.canvaslms.com/t5/Canvas/ct-p/canvas) course announcements and assignments into text channels.
 
 ![CanvasWatch Discord Screenshot](https://i.imgur.com/bYJUDvA.jpeg)
 
