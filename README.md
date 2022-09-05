@@ -1,19 +1,21 @@
 # CanvasWatch
 
 ## What?
-A Discord bot for posting [Canvas LMS](https://community.canvaslms.com/t5/Canvas/ct-p/canvas) course announcements and assignments into text channels.
+A Discord bot for automatically posting [Canvas LMS](https://community.canvaslms.com/t5/Canvas/ct-p/canvas) course announcements and assignments into text channels.
 
 ![CanvasWatch Discord Screenshot](https://i.imgur.com/bYJUDvA.jpeg)
+
+✨ The embed colour even matches that of the Canvas course colour!
 
 ## Requirements
 You'll need a few things before you can use the bot.
 1. A [Discord developer account](https://discord.com/developers).
 2. Somewhere to host the bot. I highly recommend [Hetzner](https://hetzner.cloud/?ref=tqgDVez81Fag). *(affiliate link)*
-3. [Node JS](https://nodejs.org/en/)
+3. [Node JS](https://nodejs.org/en/) (>= 16.9.0)
 4. Be on a Canvas course of some sort.
 
 ## Installing
-1. Clone this repo or [download the zip file]() and extract it to where you intend to run it from.
+1. Clone this repo or [download the zip file](https://github.com/drrnb/canvaswatch/archive/refs/heads/main.zip) and extract it to where you intend to run it from.
 2. Run `npm install` to install the required node packages.
 
 ## Creating the Discord Bot
@@ -49,16 +51,26 @@ Once it's running invite it to your Discord server by going back to the Discord 
 Select the following checkboxes: "bot", "application.commands", "Send Messages", "Embed Links" and then open the URL and invite the bot to your server.
 
 ## Setting the announcement & assignment Discord Channels
-From within Discord you can use the following commands to setup the bot:
-`/announcements-channel <channel>` to set the text channel to post announcements to.
-`/assignments-channel <channel>` to set the text channel to post assignments to.
-`/announcements-fetch` to get the latest announcements.
-`/assignments-fetch` to get the latest assignments.
+From within Discord you can use the following commands to setup the bot:   
+`/announcements-channel <channel>` to set the text channel to post announcements to.  
+`/assignments-channel <channel>` to set the text channel to post assignments to.  
+
+For the smoothest ride I recommend running the above commands and then restarting the bot. It should just work unattended from then on.
 
 Once setup the bot will check for new assignments and announcements every 5 minutes. You can change this from near the top of `index.js` if you wish.
 
+You can tell it to fetch assignments and announcements like so:  
+`/announcements-fetch` to get the latest announcements.  
+`/assignments-fetch` to get the latest assignments. 
+
+If an assignment or announcement has already been posted, it won't post it again.
+
 ## Bugs & Issues
 There is bound to be some issues and broken things somewhere along the line, feel free to submit pull requests and issues and if I get around to it I'll take a look. I know for one that the error handling isn't perfect. Make sure you have the right bot permissions in Discord. ;)
+
+### Known Issues
+- When first starting the bot you may have some errors related to undefined message content, just be sure everything is setup correctly and you have the correct channels setup in Discord and restart the bot and it should be fine from then on.
+- When fetching all the canvas data initially, it will post to Discord in reverse order. New posts are of course unaffected by this.
 
 ## License
 ```

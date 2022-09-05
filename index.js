@@ -132,7 +132,7 @@ client.on('interactionCreate', async interaction => {
         postAllAnnouncements()
         .then(async () => {
             runCanvasCheckTimer();
-            await interaction.reply(`Announcements have been posted in <#${channelsConfig.announcementsChannel}>. I will check for any new announcements every 5 minutes and post them if found.`);
+            await interaction.reply(`Announcements have been posted in <#${channelsConfig.announcementsChannel}>. I will check for any new announcements every ${timerCheckMinutes} minutes and post them if found.`);
         })
         .catch(async (error) => {
             console.error(error);
@@ -282,10 +282,12 @@ async function announcementPostAlreadyExists(post){
     await channel.messages.fetch({ limit: 100 })
     .then(async messages => {
         messages.forEach(message => {
-            // If message matches, return true
-            const embeddedMessageUrl = message.embeds[0].url;
-            if(post_url === embeddedMessageUrl){
-                isDuplicateMessage = true;
+            if(message.author.id === client.user.id){
+                // If message matches, return true
+                const embeddedMessageUrl = message.embeds[0].url;
+                if(post_url === embeddedMessageUrl){
+                    isDuplicateMessage = true;
+                }
             }
         })
     });
@@ -315,9 +317,11 @@ async function announcementPostAlreadyExists(post){
     .then(async messages => {
         messages.forEach(message => {
             // If message matches, return true
-            const embeddedMessageUrl = message.embeds[0].url;
-            if(post_url === embeddedMessageUrl){
-                isDuplicateMessage = true;
+            if(message.author.id === client.user.id){
+                const embeddedMessageUrl = message.embeds[0].url;
+                if(post_url === embeddedMessageUrl){
+                    isDuplicateMessage = true;
+                }
             }
         })
     });
