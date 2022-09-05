@@ -3,8 +3,7 @@
     "@discordjs/rest": "^1.1.0",
     "discord.js": "^14.3.0",
     "html-to-text": "^8.2.1",
-    "node-fetch": "^2.6.7",
-    "string-strip-html": "^8.3.0"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "eslint": "^8.23.0"

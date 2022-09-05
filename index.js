@@ -6,7 +6,7 @@
  */
 
 const { Client, GatewayIntentBits, ActivityType, EmbedBuilder } = require('discord.js');
-const { discordBotToken, canvasToken, canvasCourseURL, canvasCourseId } = require('./config.json');
+const { discordBotToken, canvasToken, canvasCourseURL, canvasCourseId } = require('./dev_config.json');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const { convert } = require('html-to-text');
@@ -91,7 +91,7 @@ client.on('interactionCreate', async interaction => {
     // Assignments
 	if (commandName === 'assignments-channel') {
         if(channelsConfig.assignmentsChannel === channelId){
-            await interaction.reply(`**${prettyCommandName}** is already set to <#${channelId}>!`);
+            await interaction.reply(`**${prettyCommandName}** is already set to <#${channelId}>!`, { ephemeral: true });
             return;
         }
         channelsConfig.assignmentsChannel = channelId;
@@ -99,25 +99,26 @@ client.on('interactionCreate', async interaction => {
     else if (commandName === 'assignments-fetch') {
 
         if(!channelsConfig.assignmentsChannel){
-            await interaction.reply(`You need to setup a channel to post the ${prettyCommandName} to first! Use **/${prettyCommandName}-channel** to do so.`);
+            await interaction.reply(`You need to setup a channel to post the ${prettyCommandName} to first! Use **/${prettyCommandName}-channel** to do so.`, { ephemeral: true });
             return;
         }
 
         postAllAssignments()
         .then(async () => {
-            runCanvasCheckTimer();
-            await interaction.reply(`Assignments have been posted in <#${channelsConfig.assignmentsChannel}>. I will check for any new assignments every 10 minutes and post them if found.`);
+            await interaction.deferReply();
+            await runCanvasCheckTimer();
+            await interaction.editReply(`Assignments have been posted in <#${channelsConfig.assignmentsChannel}>. I will check for any new assignments every ${timerCheckMinutes} minutes and post them if found.`, { ephemeral: true });
         })
         .catch(async (error) => {
             console.error(error);
-            await interaction.reply(`There was an error with posting the ${prettyCommandName}. Please check the console log!`);
+            await interaction.reply(`There was an error with posting the ${prettyCommandName}. Please check the console log!`, { ephemeral: true });
         });
 	}
 
     // Announcements
     else if (commandName === 'announcements-channel') {
         if(channelsConfig.announcementsChannel === channelId){
-            await interaction.reply(`**${prettyCommandName}** is already set to <#${channelId}>!`);
+            await interaction.reply(`**${prettyCommandName}** is already set to <#${channelId}>!`, { ephemeral: true });
             return;
         }
 		channelsConfig.announcementsChannel = channelId;
@@ -125,18 +126,19 @@ client.on('interactionCreate', async interaction => {
     else if (commandName === 'announcements-fetch') {
 
         if(!channelsConfig.announcementsChannel){
-            await interaction.reply(`You need to setup a channel to post the ${prettyCommandName} to first! Use **/${prettyCommandName}-channel** to do so.`);
+            await interaction.reply(`You need to setup a channel to post the ${prettyCommandName} to first! Use **/${prettyCommandName}-channel** to do so.`, { ephemeral: true });
             return;
         }
 
         postAllAnnouncements()
         .then(async () => {
-            runCanvasCheckTimer();
-            await interaction.reply(`Announcements have been posted in <#${channelsConfig.announcementsChannel}>. I will check for any new announcements every ${timerCheckMinutes} minutes and post them if found.`);
+            await interaction.deferReply();
+            await runCanvasCheckTimer();
+            await interaction.editReply(`Announcements have been posted in <#${channelsConfig.announcementsChannel}>. I will check for any new announcements every ${timerCheckMinutes} minutes and post them if found.`, { ephemeral: true });
         })
         .catch(async (error) => {
             console.error(error);
-            await interaction.reply(`There was an error with posting the ${prettyCommandName}. Please check the console log!`);
+            await interaction.reply(`There was an error with posting the ${prettyCommandName}. Please check the console log!`, { ephemeral: true });
         });
 	}
 
@@ -145,10 +147,10 @@ client.on('interactionCreate', async interaction => {
         const channelConfigData = JSON.stringify(channelsConfig, null, 2);
         fs.writeFile(channelsConfigFile, channelConfigData, async (err) => {
             if (err) {
-                await interaction.reply(`**Oh no!** A bot error occured: ${err}`);
+                await interaction.reply(`**Oh no!** A bot error occured: ${err}`, { ephemeral: true });
                 return;
             };
-            await interaction.reply(`**${prettyCommandName}** set to channel <#${channelId}>`);
+            await interaction.reply(`**${prettyCommandName}** set to channel <#${channelId}>`, { ephemeral: true });
         });
     }
 });
