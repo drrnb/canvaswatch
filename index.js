@@ -6,7 +6,7 @@
  */
 
 const { Client, GatewayIntentBits, ActivityType, EmbedBuilder } = require('discord.js');
-const { discordBotToken, canvasToken, canvasCourseURL, canvasCourseId } = require('./dev_config.json');
+const { discordBotToken, canvasToken, canvasCourseURL, canvasCourseId } = require('./config.json');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const { convert } = require('html-to-text');
