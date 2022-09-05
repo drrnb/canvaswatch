@@ -22,7 +22,7 @@ You'll need a few things before you can use the bot.
 1. Visit the [Discord developer site](https://discord.com/developers) and create a new application. Call it whatever you like.
 2. On the sidebar choose "OAuth2 -> General".
 3. Under "Scopes" tick the "bot" checkbox.
-4. Under "Bot Permissions" check the following boxes: "Send Messages" and "Embed Links".
+4. Under "Bot Permissions" check the following boxes: "Send Messages", "Read message history" and "Embed Links".
 5. Click on "Bot" on the sidebar and allow it to create a bot, untick "Public" and give it a name and profile picture if you so wish.
 6. Use the token button to generate a token and copy it to your clipboard.
 
